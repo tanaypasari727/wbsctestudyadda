@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials - WBSCTE Polytechnic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="WBSCTE Logo" class="logo">
+            <h1>Study Material - WBSCTE Study Adda(Polytechnic)</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="study-material.html" class="active">Study Material</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Select Year</h2>
+            <select id="yearSelect" onchange="showDepartmentOptions()">
+                <option value="" disabled selected>Select Year</option>
+                <option value="1st">1st Year</option>
+                <option value="2nd">2nd Year</option>
+                <option value="3rd">3rd Year</option>
+                <!-- Add more years if applicable -->
+            </select>
+        </section>
+
+        <section id="departmentSection" style="display:none;">
+            <h2>Select Department</h2>
+            <select id="departmentSelect" onchange="showSubjectOptions()">
+                <option value="" disabled selected>Select Department</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="mechanical-engineering">Mechanical Engineering</option>
+                <!-- Add more departments as needed -->
+            </select>
+        </section>
+
+        <section id="subjectSection" style="display:none;">
+            <h2>Select Subject</h2>
+            <select id="subjectSelect" onchange="downloadStudyMaterial()">
+                <option value="" disabled selected>Select Subject</option>
+                <option value="math">Math</option>
+                <option value="physics">Physics</option>
+                <!-- Add more subjects as needed -->
+            </select>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WBSCTE Polytechnic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showDepartmentOptions() {
+            document.getElementById("departmentSection").style.display = "block";
+        }
+
+        function showSubjectOptions() {
+            document.getElementById("subjectSection").style.display = "block";
+        }
+
+        function downloadStudyMaterial() {
+            const year = document.getElementById("yearSelect").value;
+            const department = document.getElementById("departmentSelect").value;
+            const subject = document.getElementById("subjectSelect").value;
+            alert(`Downloading study material for ${subject} in ${department}, ${year}`);
+        }
+    </script>
+</body>
+</html>
