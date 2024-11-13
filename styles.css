@@ -24,7 +24,6 @@ header {
     align-items: center;
     background: linear-gradient(135deg, #0052cc, #0066ff);
     color: white;
-    width: 100%
     padding: 20px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 30px;
@@ -370,18 +369,7 @@ main {
     color: #128C7E; /* Darker WhatsApp green */
 }
 /* Styling for the Header */
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(135deg, #0052cc, #0066ff);
-    color: white;
-    padding: 40px 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    position: relative;
-}
+
 
 /* Notice Button Container */
 .notice-button-container {
@@ -435,69 +423,4 @@ header {
 .notice-button:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
-}
-/* Main Section Styling */
-main {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-/* Content Section Styling */
-.content {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Notice Bar Styling */
-.notice-bar {
-    background: linear-gradient(45deg, #ffcc00, #ff9933);
-    padding: 15px 20px;
-    border-radius: 8px;
-    color: #333;
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 20px auto;
-    max-width: 80%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: pulseBackground 3s infinite ease-in-out;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Notice Bar Text Styling with Glow Effect */
-.notice-bar p {
-    margin: 0;
-    font-weight: bold;
-    color: #333;
-    text-shadow: 0 0 8px rgba(255, 204, 0, 0.8);
-    animation: glowingText 2s ease-in-out infinite alternate;
-}
-
-/* Background Animation */
-@keyframes pulseBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.notice-bar {
-    background-size: 200% 200%;
-}
-
-/* Glowing Text Animation */
-@keyframes glowingText {
-    0% {
-        color: #333;
-        text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
-    }
-    100% {
-        color: #333;
-        text-shadow: 0 0 15px rgba(255, 204, 0, 1), 0 0 20px rgba(255, 204, 0, 0.5);
-    }
 }
