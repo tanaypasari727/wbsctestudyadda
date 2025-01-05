@@ -133,6 +133,47 @@
                 errorDiv.textContent = result.message;
             }
         });
+        @RestController
+public class SignInController {
+
+    @Autowired
+    private StudentRepository studentRepository;
+
+    @PostMapping("/signin")
+    public ResponseEntity<?> signIn(@RequestBody SignInRequest request) {
+        Student student = studentRepository.findByMobile(request.getMobile());
+
+        if (student != null && student.getPassword().equals(request.getPassword())) {
+            return ResponseEntity.ok(Map.of("success", true, "message", "Sign-in successful", "student", student));
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(Map.of("success", false, "message", "Invalid credentials"));
+        }
+    }
+}
+
+@Entity
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String mobile;
+    private String password;
+    private String name;
+
+    // Getters and Setters
+}
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Integer> {
+    Student findByMobile(String mobile);
+}
+
+@Data
+public class SignInRequest {
+    private String mobile;
+    private String password;
+}
     </script>
 </body>
 </html>
